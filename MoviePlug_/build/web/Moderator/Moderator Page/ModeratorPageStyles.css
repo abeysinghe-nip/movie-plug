@@ -1,0 +1,55 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 16, 2023, 9:22:30 PM
+    Author     : MSI NEW
+*/
+body {
+  font-family: Arial, sans-serif;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+.moderator-container {
+  max-width: 1000px;
+  margin: 300px auto;
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+/* Add spacing between buttons */
+button {
+  flex: 5;
+  padding: 80px;
+  height: 50px;
+  width: 100px;
+  background-color: #ffd700;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 50px; /* Adjust the margin value to set the desired spacing */
+  font-weight: bold;
+}
+
+/* Remove margin from the last button in each row */
+.button-row button:last-child {
+  margin-right: 0;
+}
+
+button:hover {
+  background-color: goldenrod;
+}
+

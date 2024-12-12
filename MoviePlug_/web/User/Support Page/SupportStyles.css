@@ -1,0 +1,65 @@
+/* Existing CSS styles remain unchanged */
+body {
+    background-color: black;
+    color: white;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.col-md-6,
+.col-lg-3 {
+    flex: 1;
+    max-width: calc(25% - 30px);
+}
+
+@media (min-width: 768px) {
+    .col-md-6,
+    .col-lg-3 {
+        max-width: calc(50% - 30px);
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-6,
+    .col-lg-3 {
+        max-width: calc(25% - 30px);
+    }
+}
+
+.faq-box {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #ffd700;
+}
+
+.faq-box i {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+.faq-box h6 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffd700;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.faq-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: white;
+    text-align: center;
+}

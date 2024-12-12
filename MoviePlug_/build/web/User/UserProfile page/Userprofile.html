@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title> User Profile</title>
+        <link rel="stylesheet" href="UserProfileStyles.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+    
+    <header>
+      
+    </header>
+
+    <div class="container">
+        <div class="profile-pic">
+            <img src="profile-pic.png" alt="Movie Poster" style="max-width: 400px; height: auto;">
+        </div>
+        <div class="details">
+            <h1 style="font-size: 32px;">John Doe</h1>
+            <div class="sub_detail">
+                <img src="id.png">
+                <p style="padding-left: 10px;">@johndoe76</p>
+            </div>
+            <div class="sub_detail">
+                <img src="email.png">
+                <input id="email" style="padding-left: 10px;" value="john@example.com" disabled>
+                <img src="edit.png" id="email-edit-button-image" onclick="editEmail()">
+            </div>
+            <div class="sub_detail" style="margin-top: 15px; margin-bottom: 10px;">
+                <img src="phone.png">
+                <input id="phone" style="padding-left: 10px;" value="071xxxxxxx" disabled>
+                <img src="edit.png" id="phone-edit-button-image" onclick="editPhone()">
+            </div>
+            <div class="sub_detail">
+                <img src="watch-hours.webp">
+                <p style="padding-left: 10px;">56h 35m</p>
+            </div>
+
+            </div>
+            <div style="margin-top: 20px;">
+                <button onclick="changePassword()">Change Password</button>
+                <button onclick="deactivate()" id="butDeactivate">Deactivate</button>
+                <button onclick="deleteAccount()">Delete Account</button>
+            </div>
+
+        </div>
+  
+
+
+    <div class="recently-watched-row">
+        <h3>Recently Watched</h3>
+        <div class="recently-watched">
+            <div class="recently-watched-single">
+                <img src="recently-watched1.jpg" alt="Actor 1">
+                <p>Guardians of the Galaxy</p>
+            </div>
+
+            <div class="recently-watched-single">
+                <img src="recently-watched2.jpg" alt="Actor 2">
+                <p>Mission: Impossible</p>
+            </div>
+
+            <div class="recently-watched-single">
+                <img src="recently-watched3.jpg" alt="Actor 3">
+                <p>The Out-Laws</p>
+            </div>
+
+            <div class="recently-watched-single">
+                <img src="recently-watched4.jpg" alt="Actor 3">
+                <p>Jack Black</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function editEmail() {
+            var emailInput = document.getElementById("email");
+            var emailEditButtonImage = document.getElementById("email-edit-button-image");
+
+            if (emailInput.disabled) {
+                emailInput.disabled = false;
+                emailEditButtonImage.src = "save.png"
+            } else {
+                var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (regex.test(emailInput.value)) {
+                    emailInput.disabled = true;
+                    emailEditButtonImage.src = "edit.png"
+                } else {
+                    alert("Email is not valid");
+                }
+            }
+        }
+        function editPhone() {
+            var phoneInput = document.getElementById("phone");
+            var phoneEditButtonImage = document.getElementById("phone-edit-button-image");
+
+            if (phoneInput.disabled) {
+                phoneInput.disabled = false;
+                phoneEditButtonImage.src = "save.png"
+            } else {
+                var regex = /^07\d{8}$/;
+                if (regex.test(phoneInput.value)) {
+                    phoneInput.disabled = true;
+                    phoneEditButtonImage.src = "edit.png"
+                } else {
+                    alert("Phone Number is not valid");
+                }
+
+            }
+        }
+        function changePassword() {
+            var currentPassword = prompt("Enter current password:");
+            var newPassword = prompt("Enter new password:");
+            var reenteredPassword = prompt("Re-enter new password:");
+            if (currentPassword != null && newPassword != null && reenteredPassword != null) {
+                if (newPassword == reenteredPassword) {
+                    alert("Password changed successfully!");
+                } else {
+                    alert("New passwords do not match!");
+                }
+            } else {
+                alert("Please fill in all fields!");
+            }
+        }
+        function deactivate() {
+            var butDeactivate = document.getElementById("butDeactivate");
+            if (butDeactivate.innerHTML === "Deactivate") {
+                var result = confirm("Are you sure you want to deactivate account?");
+                if (result) {
+                    butDeactivate.innerHTML = "Activate";
+                }
+            } else {
+                alert("Your account is active now!")
+                butDeactivate.innerHTML = "Deactivate";
+            }
+        }
+        function deleteAccount() {
+            if (confirm("Are you sure you want to delete your account?")) {
+                var currentPassword = prompt("Enter your password:");
+                var reEnteredPassword = prompt("Re-enter your password:");
+                if (currentPassword != null && reEnteredPassword != null) {
+                    if (currentPassword == reEnteredPassword) {
+                        alert("Your account will be deleted in 30 days. You can logout now. If you log in within 30 days, the account will be active again.");
+                    } else {
+                        alert("Password do not match!");
+                    }
+                } else {
+                    alert("Please fill in all fields!");
+                }
+            }
+        }
+    </script>
+
+        
+    </body>
+</html>

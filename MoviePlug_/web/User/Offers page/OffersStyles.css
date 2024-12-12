@@ -1,0 +1,48 @@
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+}
+h1{
+    color:#ffd700;
+    text-align: center;
+    
+}
+/* Banner styles */
+.banner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+.banner {
+    width: 100%;
+    max-width: 1000px; /* Set a maximum width for the banner */
+    background-color: #ffd700;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden; /* Hide any overflowing content */
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.banner-text {
+    padding: 15px;
+}
+
+.banner-text h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.banner-text p {
+    font-size: 14px;
+    color: #333;
+}
